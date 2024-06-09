@@ -15,3 +15,5 @@
    ```bash
    python main.py
    ```
+
+   > Notice: Run with `sudo` when using Unix-like systems.
