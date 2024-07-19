@@ -1,6 +1,7 @@
 import os
 import random
 import time
+from datetime import datetime
 from time import sleep
 
 import keyboard
@@ -42,8 +43,13 @@ def typing():
         print(f"{rand_str}\n{typed}", end="", flush=True)
         if len(letters) == 0:
             break
-    print(f"\nTime: {time.time() - begin_time:.2f} seconds")
-    print(f"Accuracy: {100 - error_count / typed_count * 100:.2f}%")
+
+    time_used = time.time() - begin_time
+    acc_rate = 1 - error_count / typed_count
+    with open("scores.csv", "a") as log_file:
+        log_file.write(f"{datetime.now().isoformat()},{time_used},{acc_rate}\n")
+    print(f"\nTime: {time_used:.2f} seconds")
+    print(f"Accuracy: {acc_rate * 100:.2f}%")
 
 
 def main():

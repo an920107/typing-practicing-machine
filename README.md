@@ -17,3 +17,12 @@
    ```
 
    > Notice: Run with `sudo` when using Unix-like systems.
+
+## Scores Log
+
+- Scores logs are saved as csv format, and the table below shows definition and format of the columns.
+
+  | Date Time | Time Used | Accuracy |
+  |:---------:|:---------:|:--------:|
+  |iso8601    |seconds    |-         |
+
